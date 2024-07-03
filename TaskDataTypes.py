@@ -66,6 +66,17 @@ mytuple = (1, 2, 3, 4)
 print(f"my tuple is : {mytuple}")
 
 
+my_tuple = (1, "hello", 3.14)
+
+# Спроба змінити елемент кортежу (викличе помилку)
+try:
+    my_tuple[1] = "new value"
+except TypeError as e:
+    print(f"Помилка: {e}")
+
+print("Кортеж:", my_tuple)
+
+
 
 
 # 5. Рядки (str)
@@ -82,3 +93,13 @@ print(user_input)
 
 user_input = user_input.upper()
 print(user_input)
+
+
+# 6. Абстракція списків (List Comprehension)
+# Напишіть програму, яка створює список квадратів чисел від 1 до 10,
+# використовуючи абстракцію списків. Виведіть результат на екран.
+
+squares = [x**2 for x in range(1, 11)]
+print("Список квадратів чисел від 1 до 10:", squares)
+
+
