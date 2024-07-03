@@ -258,7 +258,7 @@ print(message)
 # Наприклад:
 
 message = 'Hola Amigos'
-message[0] = 'H' # error !!!
+# message[0] = 'H' # error !!!
 print(message) 
 
 
@@ -360,3 +360,18 @@ print('Vowel Letters:', vowel_letters)
 # Множина змішаного типу
 mixed_set = {'Hello', 101, -2, 'Bye'}
 print('Set of mixed data types:', mixed_set)
+
+
+
+
+# Створення порожньої множини
+empty_set = set()
+ 
+# Створення порожнього словника
+empty_dictionary = { }
+ 
+# Перевірка типу даних empty_set
+print('Data type of empty_set:', type(empty_set))
+ 
+# Перевірка типу даних dictionary_set
+print('Data type of empty_dictionary', type(empty_dictionary))
