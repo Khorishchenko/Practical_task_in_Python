@@ -233,6 +233,12 @@ print(my_tuple)
 
 
 
+
+
+
+
+
+
 # Рядки в Python
 # Рядок — це послідовність символів. Наприклад, 
 # "hello" — це рядок, що складається з набору символів: 'h', 'e', 'l', 'l' та 'o'.
@@ -270,6 +276,14 @@ message = 'Hello Friends'
 print(message) # виведе "Hello Friends"
 
 # end -- > https://acode.com.ua/strings-python/
+
+
+
+
+
+
+
+
 
 
 
@@ -375,3 +389,78 @@ print('Data type of empty_set:', type(empty_set))
  
 # Перевірка типу даних dictionary_set
 print('Data type of empty_dictionary', type(empty_dictionary))
+
+
+
+
+# Додавання елемента до множини
+# В Python метод add() використовується для додавання елемента до множини. Наприклад:
+
+numbers = {21, 34, 54, 12}
+ 
+print('Initial Set:',numbers)
+ 
+# Використання методу add() 
+numbers.add(32)
+ 
+print('Updated Set:', numbers)
+
+#  end -- > https://acode.com.ua/set-python/
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Словник (dict) в Python
+
+# Словник в Python — це впорядкована колекція елементів, 
+# яка зберігає їх у вигляді пари “ключ-значення”. 
+# Ключ — це унікальний ідентифікатор, який пов’язаний із кожним значенням. 
+# Наприклад, якщо нам потрібно зберегти інформацію про країни та їх столиці, 
+# ми можемо створити словник з назвами країн як ключі та з назвами столиць як значеннями.
+
+
+# Створення словника в Python
+capital_city = {"Nepal": "Kathmandu", "Ukraine": "Kyiv", "Italy": "Rome"}
+print(capital_city)
+
+
+# Додавання елементів до словника
+capital_city = {"Nepal": "Kathmandu", "Italy": "Rome"}
+print("Initial Dictionary: ",capital_city)
+ 
+capital_city["Japan"] = "Tokyo"
+ 
+print("Updated Dictionary: ",capital_city)
+
+# Зміна значень у словнику
+# Ми також можемо використати [] для зміни значення, пов’язаного з певним ключем. Наприклад:
+
+student_id = {111: "Eric", 112: "Kyle", 113: "Butters"}
+print("Initial Dictionary: ", student_id)
+ 
+student_id[112] = "Stan"
+ 
+print("Updated Dictionary: ", student_id)
+
+
+
+# Видалення елементів зі словника
+student_id = {111: "Eric", 112: "Kyle", 113: "Butters"}
+ 
+print("Initial Dictionary: ", student_id)
+ 
+del student_id[111]
+ 
+print("Updated Dictionary ", student_id)
+
+
+#  end --> https://acode.com.ua/dictionary-python/

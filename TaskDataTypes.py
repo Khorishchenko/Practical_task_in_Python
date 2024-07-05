@@ -103,3 +103,57 @@ squares = [x**2 for x in range(1, 11)]
 print("Список квадратів чисел від 1 до 10:", squares)
 
 
+
+
+
+# 7. Робота з Множинами (set):
+# Створити дві множини, set1 та set2, і заповнити їх випадковими значеннями.
+# Вивести на екран елементи, які присутні в обох множинах.
+# Вивести на екран елементи, які є тільки в set1, але не в set2.
+# Об'єднати множини set1 та set2 і вивести результат.
+
+import random
+
+empty_set_one = set()
+empty_set_two = set()
+
+for element in range(10):
+    empty_set_one.add(random.randrange(0, 10))
+    empty_set_two.add(random.randrange(0, 10))
+
+print(empty_set_one)
+print(empty_set_two)
+
+print('Intersection using intersection():', empty_set_one.intersection(empty_set_one))
+print('Difference using difference():', empty_set_one.difference(empty_set_two))
+
+print('Union using union():', empty_set_one.union(empty_set_two))
+
+
+
+
+
+
+
+# 8. Робота зі Словниками (dict):
+# Створити словник, який зберігає імена та вік кількох людей.
+# Додати до словника нову пару ключ-значення.
+# Видалити зі словника елемент за заданим ключем.
+# Перебрати словник і вивести кожне ім'я разом із віком.
+
+
+dicts = {
+    "name": "John",
+    "age": 25,
+    "city": "Kyiv"
+}
+
+dicts["addres"] = "vailon"
+
+print(f"our dic: {dicts}")
+
+key = input("enter key for delete element: ")
+
+del dicts[key]
+
+print(f"our dic: {dicts}")
