@@ -86,6 +86,8 @@ else:
 for i in range(10):
     print(f"Ітерація {i + 1}")
 
+
+
 # Використання циклу while
 i = 0
 while i < 10:
@@ -118,8 +120,6 @@ for num in numbers:
 word = "hello"
 for char in word:
     print(char)
-
-
 
 
 
