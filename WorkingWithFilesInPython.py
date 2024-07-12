@@ -272,3 +272,153 @@ except:
 else:
     reciprocal = 1/num
     print(reciprocal)
+
+
+
+
+
+
+# Конструкція try…finally в Python
+# В Python блок finally виконується завжди, незалежно від того, генерується виняток чи ні. 
+# Блок finally є необов’язковим. 
+# І для кожного блоку try може бути лише один блок finally. Наприклад:
+
+try:
+    numerator = 10
+    denominator = 0
+ 
+    result = numerator/denominator
+ 
+    print(result)
+ 
+except:
+    print("Error: Denominator cannot be 0.")
+    
+finally:
+    print("This is finally block.")
+
+
+
+
+
+
+
+
+
+
+
+
+# Користувацькі винятки в Python
+# Визначення користувацьких винятків
+# В Python ми можемо визначити користувацькі винятки, 
+# створивши новий клас, який буде дочірнім вбудованому класу Exception.
+
+class CustomError(Exception):
+    ...
+    pass
+ 
+try:
+   ...
+ 
+except CustomError:
+    ...
+
+
+
+
+def sum():
+    ...
+
+
+
+from typing import List
+
+def process_items(items: List[int]) -> None:
+    """
+    Ця функція приймає список цілих чисел і не повертає значення.
+    
+    :param items: Список цілих чисел
+    :return: None
+    """
+    for item in items:
+        print(item)
+
+# def process_items(items: List[int]) -> None::
+# def: Ключове слово для визначення нової функції.
+# process_items: Ім'я функції.
+# items: Аргумент функції.
+# List[int]: Анотація типу для аргументу items, яка вказує,
+# що items має бути списком (List) з елементами типу int (цілі числа).
+# -> None: Анотація типу для повертаємого значення функції, яка вказує, 
+# що ця функція не повертає значення (повертає None).
+
+
+
+
+
+
+
+
+# Розглянемо приклад використання користувацького винятку в Python:
+
+# Визначаємо користувацький виняток
+class InvalidAgeException(Exception):
+    "Raised when the input value is less than 18"
+    pass
+ 
+# Потрібно вгадати це число
+number = 18
+ 
+try:
+    input_num = int(input("Enter a number: "))
+    if input_num < number:
+        raise InvalidAgeException
+    else:
+        print("Eligible to Vote")
+        
+except InvalidAgeException:
+    print("Exception occurred: Invalid Age")
+
+
+
+# raise в Python використовується для генерації винятків.
+# Це ключове слово дозволяє вам створити власний виняток або повторно підняти вже існуючий. 
+# Ось декілька прикладів використання raise:
+
+class MyCustomError(Exception):
+    pass
+
+def do_something():
+    raise MyCustomError("Something went wrong")
+
+try:
+    do_something()
+except MyCustomError as e:
+    print(e)  # Виведе: Something went wrong
+
+
+
+
+
+# Кастомізація класів винятків
+
+# Щоб дізнатися про налаштування (кастомізацію) класів винятків, 
+# необхідно мати базові знання про об’єктно-орієнтоване програмування. Наприклад::
+
+
+class SalaryNotInRangeError(Exception):
+    """Виняток, викликаний помилками у вхідному значенні salary
+ 
+    Атрибути:
+        salary -- значення salary, яке викликало помилку
+        message -- пояснення помилки
+    """
+ 
+    def __init__(self, salary, message="Salary is not in (5000, 15000) range"):
+        self.salary = salary
+        self.message = message
+        super().__init__(self.message)
+ 
+salary = int(input("Enter salary amount: "))
+if not 5000 < salary < 15000:
+    raise SalaryNotInRangeError(salary)
