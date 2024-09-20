@@ -111,5 +111,27 @@ import sys
 
 
 
-for i in range(1, int(input())): 
-    print(i * (10**i // 9))
+# for i in range(1, int(input())): 
+#     print(i * (10**i // 9))
+
+
+# import asyncio
+
+# async def task1():
+#     print("Задача 1 почалася")
+#     await asyncio.sleep(2)  # Асинхронна пауза на 2 секунди
+#     print("Задача 1 завершена")
+
+# async def task2():
+#     print("Задача 2 почалася")
+#     await asyncio.sleep(1)  # Асинхронна пауза на 1 секунду
+#     print("Задача 2 завершена")
+
+# async def main():
+#     await asyncio.gather(task1(), task2())  # Виконуємо задачі одночасно
+
+# # Запускаємо головну функцію
+# asyncio.run(main())
+
+
+
