@@ -151,6 +151,107 @@ print("Outside both function: ", num)
 
 
 
+
+
+# typing— Поддержка подсказок по типу
+
+#====================================================================================================================================================
+# typing — Support for type hints
+# Python является интерпретируемым языком с сильной, но динамической типизацией, поэтому встроенная проверка типов, как, например,
+# в C++ или Java, отсутствует. Однако начиная с версии 3.5 в языке появилась поддержка подсказок типов, 
+# благодаря которой различные чекеры и IDE вроде PyCharm анализируют типы используемых значений и подсказывают программисту, 
+# если он передаёт что-то не то. В данном случае подсказка types.Message сообщает PyCharm-у, что переменная message имеет тип Message, 
+# описанный в модуле types библиотеки aiogram (см. импорты в начале кода). Благодаря этому IDE может на лету подсказывать атрибуты и функции.
+
+import asyncio
+import logging
+import sys
+import json
+import aiohttp
+from typing import List
+
+
+def surface_area_of_cube(edge_length: float) -> str:
+    return f"The surface area of the cube is {6 * edge_length ** 2}."
+
+
+
+# Type aliases
+type Vector = list[float]
+
+def scale(scalar: float, vector: Vector) -> Vector:
+    return [scalar * num for num in vector]
+
+# passes type checking; a list of floats qualifies as a Vector.
+new_vector = scale(2.0, [1.0, -4.2, 5.4])
+
+
+
+
+
+
+
+
+# Псевдонимы типов полезны для упрощения сложных сигнатур типов. Например:
+
+from collections.abc import Sequence
+
+type ConnectionOptions = dict[str, str]
+type Address = tuple[str, int]
+type Server = tuple[Address, ConnectionOptions]
+
+def broadcast_message(message: str, servers: Sequence[Server]) -> None:
+    ...
+
+# The static type checker will treat the previous type signature as
+# being exactly equivalent to this one.
+def broadcast_message(
+    message: str,
+    servers: Sequence[tuple[tuple[str, int], dict[str, str]]]
+) -> None:
+
+
+
+
+
+
+
+
+# НовыйТип
+from typing import NewType
+
+UserId = NewType('UserId', int)
+some_id = UserId(524313)
+
+
+def get_user_name(user_id: UserId) -> str:
+    ...
+
+# passes type checking
+user_a = get_user_name(UserId(42351))
+
+# fails type checking; an int is not a UserId
+user_b = get_user_name(-1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Що таке модуль?
 # Модуль — це файл, який містить код для виконання певного завдання. Модуль може містити змінні, функції, класи тощо.
 
@@ -202,4 +303,3 @@ print("The value of pi is", pi)
 import game.Level.start
 game.Level.start.select_difficulty(2)
 from game.Level import start
-
