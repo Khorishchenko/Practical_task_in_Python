@@ -983,3 +983,45 @@ print("Hello, World!")
    print(p.name)  
 
 # Виведе: Alice
+
+
+
+# Функція getattr() в Python використовується для отримання 
+# значення атрибута об'єкта за його назвою (як рядок).
+# Якщо атрибут не існує, можна вказати значення за замовчуванням, яке буде повернено, щоб уникнути помилки.
+
+class MyClass:
+    def __init__(self):
+        self.name = "ChatGPT"
+        self.age = 3
+
+obj = MyClass()
+
+# Отримуємо значення атрибута 'name'
+name = getattr(obj, 'name')
+print(name)  # Виведе: ChatGPT
+
+# Отримуємо значення атрибута 'age'
+age = getattr(obj, 'age')
+print(age)  # Виведе: 3
+
+
+# Приклад 2: З використанням значення за замовчуванням
+# Якщо атрибут не існує, повернемо значення за замовчуванням
+height = getattr(obj, 'height', 180)
+print(height)  # Виведе: 180, оскільки 'height' немає в obj
+
+
+
+
+
+# Приклад 3: Виклик методу за допомогою getattr()
+class MyClass:
+    def greet(self):
+        return "Hello!"
+
+obj = MyClass()
+
+# Викликаємо метод 'greet' через getattr
+method = getattr(obj, 'greet')
+print(method())  # Виведе: Hello!

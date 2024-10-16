@@ -17,6 +17,9 @@ from aiogram import Bot, Dispatcher
 from config_reader import config
 
 from handlers import group_games
+from Midlvars import UserInternalIdMiddleware
+
+
 
 # Запуск бота
 async def main():
@@ -24,6 +27,12 @@ async def main():
     dp = Dispatcher()
 
     dp.include_router(group_games.router)
+
+
+    # Где-то в другом месте:
+    # <...>
+    dp.update.outer_middleware(UserInternalIdMiddleware())
+
 
     # Запускаем бота и пропускаем все накопленные входящие
     # Да, этот метод можно вызвать даже если у вас поллинг
