@@ -1,148 +1,213 @@
-# def main():
-#     print("Hello, world!")
-
-# if __name__ == '__main__':
-#     main()
-
-
-
-
-import math
-import os
+# # Модуль random в Python
 import random
-import re
-import sys
 
-# Given an integer, , perform the following conditional actions:
+# # Лямбда (анонімні функції) в Python
 
-# If  is odd, print Weird
-# If  is even and in the inclusive range of  to , print Not Weird
-# If  is even and in the inclusive range of  to , print Weird
-# If  is even and greater than , print Not Weird
-
-# if __name__ == '__main__':
-#     n = int(input().strip())
-    
-#     if n % 2 == 1:
-#         print('Weird')
-#     else:
-#         if 2 <= n <= 5:
-#             print('Not Weird')
-#         elif 6 <= n <= 20:
-#             print('Weird')
-#         else:
-#             print('Not Weird')
-
-
-# if __name__ == '__main__':
-#     a = int(input())
-#     b = int(input())
-    
-# print(int(a / b))
-# print(float(a / b))
+# lambda аргументи: вираз
+# Як це працює:
+# lambda — ключове слово, яке починає визначення анонімної функції.
+# аргументи — як у звичайної функції.
+# вираз — один вираз (не блок коду!), який обчислюється й повертається.
 
 
 
-# Input the values of a, b, and m
-# a = int(input())  # first integer
-# b = int(input())  # second integer
-# m = int(input())  # third integer (modulus)
 
-# Print the result of a^b
-# print(pow(a, b))
-
-# # Print the result of (a^b) % m
-# print(pow(a, b, m))
+f = lambda x: x * 2
+print(f(5))  # 10
 
 
-# У цьому завданні потрібно прочитати чотири числа \(a\), \(b\), \(c\), \(d\) і вивести результат обчислення виразу \(a^b + c^d\). 
-# Використаємо Python, оскільки він підтримує роботу з дуже великими цілими числами.
-
-### Приклад коду для цього завдання:
-# # Введення чотирьох чисел
-# a = int(input())
-# b = int(input())
-# c = int(input())
-# d = int(input())
-
-# # Обчислення результату
-# result = a**b + c**d
-
-# # Виведення результату
-# print(result)
-
-
-### Пояснення:
-# 1. Ми читаємо чотири цілі числа зі стандартного введення за допомогою `input()` та перетворюємо їх на тип `int`.
-# 2. Обчислюємо вираз \(a^b + c^d\), використовуючи оператор ** (степінь) для піднесення до степеня.
-# 3. Виводимо результат на екран за допомогою `print()`.
-
-### Приклад:
-
-# **Введення:**
-# ```
-# 9
-# 29
-# 7
-# 27
-# ```
-
-# **Виведення:**
-# ```
-# 4710194409608608369201743232
-# ```
-
-# Така задача демонструє можливість Python оперувати дуже великими числами без обмежень на розмір.
-
-# if __name__ == '__main__':
-#     a = int(input())
-#     try:
-#         if a < 0:
-#             print("Пожалуйста, введите положительное целое число.")
-#         else:
-#             for i in range( a ):
-#                 print(*range(1, i))
-#     except ValueError:
-#         print("Ошибка: пожалуйста, введите корректное целое число.")
-
-# 2. **Неоптимальные вложенные циклы:** Вложенные циклы  for  могут привести к значительным затратам по времени, особенно если  a  велико. 
-# Вместо этого можно использовать более эффективные методы для достижения желаемого результата. 
-# - Убран второй цикл, и вместо него используется распаковка  print(*range(i)) , что делает вывод более эффективным.
+def f(x):
+    return x * 2
 
 
 
-# for i in range(1, int(input())): 
-#     print(i * (10**i // 9))
+# greet = lambda : print('Hello, World!')
+
+# # Викликаємо лямбда-функцію
+# greet()
 
 
-# import asyncio
+# # Лямбда-функція з аргументами в Python
+# # Лямбда-функція, яка приймає 1 аргумент
 
-# async def task1():
-#     print("Задача 1 почалася")
-#     await asyncio.sleep(2)  # Асинхронна пауза на 2 секунди
-#     print("Задача 1 завершена")
+# greet_user = lambda name : print('Hey there,', name)
 
-# async def task2():
-#     print("Задача 2 почалася")
-#     await asyncio.sleep(1)  # Асинхронна пауза на 1 секунду
-#     print("Задача 2 завершена")
-
-# async def main():
-#     await asyncio.gather(task1(), task2())  # Виконуємо задачі одночасно
-
-# # Запускаємо головну функцію
-# asyncio.run(main())
+# # Виклик лямбда-функції
+# greet_user('Delilah')
 
 
 
-import numpy
+# 1. Сортування за довжиною рядків
+words = ['banana', 'apple', 'kiwi']
+words.sort(key=lambda x: len(x))
+print(words) 
 
 
-def arrays(arr):
-    # complete this function
-    # use numpy.array
-    return numpy.array(arr, dtype=int)
 
-arr = input().strip().split(' ')
-result = arrays(arr)
-print(result)
+# 4. Сума двох чисел
+add = lambda a, b: a + b
+print(add(5, 3)) 
+
+
+
+# З кількома аргументами:
+add = lambda a, b: a + b
+print(add(3, 4))  # 7
+
+
+#================================================================
+# Задача 4: Перевір, чи число більше 10
+# Умова:
+# Є число. Перевір, чи воно більше 10, за допомогою lambda.
+
+
+
+
+
+#================================================================
+# 1. Перевірка пароля
+# Напишіть функцію check_password(password), яка приймає рядок і перевіряє:
+
+# довжина не менше 8 символів,
+
+# містить хоча б одну цифру,
+
+# містить хоча б одну велику літеру.
+# Функція має повертати True, якщо пароль надійний, і False в іншому випадку.
+
+# char.isdigit(): and char.isupper()
+
+
+
+
+
+
+
+
+
+# Множина (set) в Python
+# Множина (set) в Python — це набір унікальних даних. 
+# Елементи множини не можуть дублюватися. Множина може містити будь-яку кількість елементів, 
+# і вони можуть бути різних типів (int, float, кортеж, рядки тощо). 
+# Але множина не може мати змінювані елементи, такі як списки, словники або інші множини. 
+# Для створення множини всі елементи поміщають усередині фігурних дужок {}, розділених комами.
+
+# ✅ set (множина)
+# Що таке:
+# Немає дублікатів.
+
+# Не зберігає порядок.
+
+# Швидкий пошук.
+
+
+
+# Множина цілочисленного типу
+student_id = {112, 114, 116, 118, 115}
+print('Student ID:', student_id)
+ 
+# Множина рядкового типу
+vowel_letters = {'a', 'e', 'i', 'o', 'u'}
+print('Vowel Letters:', vowel_letters)
+ 
+# Множина змішаного типу
+mixed_set = {'Hello', 101, -2, 'Bye'}
+print('Set of mixed data types:', mixed_set)
+
+
+
+
+# Створення порожньої множини
+empty_set = set()
+ 
+# Створення порожнього словника
+empty_dictionary = { }
+ 
+# Перевірка типу даних empty_set
+print('Data type of empty_set:', type(empty_set))
+ 
+# Перевірка типу даних dictionary_set
+print('Data type of empty_dictionary', type(empty_dictionary))
+
+
+
+
+# Додавання елемента до множини
+# В Python метод add() використовується для додавання елемента до множини. Наприклад:
+
+numbers = {21, 34, 54, 12}
+ 
+print('Initial Set:',numbers)
+ 
+# Використання методу add() 
+numbers.add(32)
+ 
+print('Updated Set:', numbers)
+
+#  end -- > https://acode.com.ua/set-python/
+
+
+
+
+# ✅ ЗАДАЧІ З set
+# Умова: Знайти унікальні імена зі списку з повторами.
+names = ["Anna", "Oleh", "Anna", "Maksym", "Oleh"]
+unique_names = set(names)
+print(unique_names)  # {'Anna', 'Oleh', 'Maksym'}
+
+
+
+
+
+
+
+
+
+
+
+# Кортеж (tuple) в Python
+# Кортеж в Python схожий на список. Різниця між ними полягає в тому, що ми не можемо змінити 
+# елементи кортежу після присвоювання їм значень, тоді як елементи списку ми можемо змінити.
+
+# ✅ tuple (кортеж)
+# Що таке:
+# Незмінна (immutable) послідовність.
+
+# Легша за список.
+
+# Використовується, коли дані не повинні змінюватися.
+
+# Створення кортежу в Python
+# Різні типи кортежів
+ 
+# Порожній кортеж
+my_tuple = ()
+print(my_tuple)
+ 
+# Кортеж, що містить цілі числа
+my_tuple = (1, 2, 3)
+print(my_tuple)
+ 
+# Кортеж зі змішаними типами даних
+my_tuple = (1, "Hello", 3.4)
+print(my_tuple)
+ 
+# Вкладений кортеж
+my_tuple = ("mouse", [8, 4, 6], (1, 2, 3))
+print(my_tuple)
+
+
+
+
+
+
+# ✅ ЗАДАЧІ З tuple
+# Задача 1: Зберігання даних студента
+# Умова: Зберегти ім’я, вік та оцінку студента в кортежі. Вивести повідомлення.
+
+student = ("Оля", 18, 93)
+print(f"{student[0]} має {student[1]} років та оцінку {student[2]}")
+
+
+# Список кортежів
+# Умова: Є список товарів у вигляді (назва, ціна). Вивести всі назви.

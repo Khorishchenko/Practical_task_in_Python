@@ -198,3 +198,25 @@ print(is_valid_email(email))  # Очікуваний результат: True а
 print(validate_email("test@example.com"))  # Output: True
 
 
+
+
+def check_password(password):
+    if len(password) < 8:
+        return False
+    
+    has_digit = False
+    has_upper = False
+
+    for char in password:
+        if char.isdigit():
+            has_digit = True
+        if char.isupper():
+            has_upper = True
+
+    return has_digit and has_upper
+
+# Приклади використання
+print(check_password("Pass1234"))  # True
+print(check_password("password"))  # False
+print(check_password("12345678"))  # False
+print(check_password("P@ssw0rd"))  # True

@@ -97,6 +97,51 @@ print(math.factorial(6))
 
 
 
+# 1.1. Створення масиву з цілими числами ('i')
+
+import array
+
+numbers = array.array('i', [1, 2, 3, 4, 5])  # Масив тільки для цілих чисел
+print(numbers)  # array('i', [1, 2, 3, 4, 5])
+print(numbers[0])  # Виведе 1
+
+
+
+
+# 1.2. Додавання та видалення елементів
+numbers.append(6)  # Додає елемент 6 у кінець масиву
+print(numbers)  # array('i', [1, 2, 3, 4, 5, 6])
+
+numbers.insert(2, 10)  # Вставляє 10 на позицію з індексом 2
+print(numbers)  # array('i', [1, 2, 10, 3, 4, 5, 6])
+
+numbers.pop(3)  # Видаляє елемент на позиції 3 (число 3)
+print(numbers)  # array('i', [1, 2, 10, 4, 5, 6])
+
+
+
+
+# 1.3. Перебирання масиву
+for num in numbers:
+    print(num, end=' ')  # 1 2 10 4 5 6
+
+
+
+
+# 1.4. Зміна значення елемента
+
+numbers[1] = 20  # Замінює другий елемент (індекс 1)
+print(numbers)  # array('i', [1, 20, 10, 4, 5, 6])
+
+
+
+
+
+
+
+
+
+
 
 
 

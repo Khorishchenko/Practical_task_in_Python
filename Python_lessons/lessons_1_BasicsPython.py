@@ -1,5 +1,22 @@
 # Отримання рядка з консолі
 
+# from colorama import init, Fore, Back, Style
+
+# # Ініціалізуємо colorama
+# init()
+
+# # Виводимо текст різними кольорами
+# print(Fore.RED + 'Цей текст червоний')
+# print(Fore.GREEN + 'Цей текст зелений')
+# print(Fore.BLUE + 'Цей текст синій')
+
+# # Виводимо текст з фоном
+# print(Back.YELLOW + 'Цей текст на жовтому фоні')
+
+# # Відновлюємо стиль
+# print(Style.RESET_ALL + 'Цей текст звичайний')
+
+
 name = input("Введіть своє ім'я: ")
 print(f"Привіт, {name}!")
 
