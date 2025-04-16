@@ -112,6 +112,129 @@ print(new_list)
 
 
 
+
+# # Лямбда (анонімні функції) в Python
+
+# lambda аргументи: вираз
+
+# Як це працює:
+# lambda — ключове слово, яке починає визначення анонімної функції.
+# аргументи — як у звичайної функції.
+# вираз — один вираз (не блок коду!), який обчислюється й повертається.
+
+
+
+
+# myFunc = lambda x, y: x * y
+# print(myFunc(5, 5))  # 10
+
+
+# # def f(x):
+# #     return x * 2
+
+# print(myFunc(10, 10))
+
+def funUniversal(x, y, myLambda):
+    print(myLambda(x, y))
+
+    # result = 0
+    # if (charValue == '-'):
+    #     result = x - y
+    # elif (charValue == '+'):
+    #     result = x + y
+    # elif (charValue == '*'):
+    #     result = x * y
+    # elif (charValue == '/'):
+    #     result = x / y
+    # elif (charValue == '**'):
+    #     result = x ** y
+    # else:
+    #     result = 0
+
+    # myList.append(result)
+   
+
+greet = lambda : print('Hello, World!')
+
+Myelse = lambda : print('else')
+
+Myelse()
+
+print("else")
+
+# # # Викликаємо лямбда-функцію
+funUniversal(10, 20, lambda x, y: x + y)
+funUniversal(10, 20, lambda x, y: x - y)
+funUniversal(10, 20, lambda x, y: x * y)
+funUniversal(10, 20, lambda x, y: x / y)
+funUniversal(10, 20, lambda x, y: x ** y)
+funUniversal(10, 20, lambda x, y: x == y)
+
+
+
+
+
+
+
+# # Лямбда-функція з аргументами в Python
+# # Лямбда-функція, яка приймає 1 аргумент
+
+greet_user = lambda name : print('Hey there,', name)
+
+def hello(name):
+    print('Hey there,', name)
+
+# # Виклик лямбда-функції
+greet_user('Delilah')
+hello("Sergii")
+
+
+
+# 1. Сортування за довжиною рядків
+words = ['banana', 'apple', 'kiwi']
+words.sort(key=lambda x: len(x))
+print(words) 
+
+
+
+# # # 4. Сума двох чисел
+add = lambda a, b: a + b
+print(add(5, 3)) 
+
+
+
+
+#================================================================
+# Задача 4: Перевір, чи число більше 10
+# Умова:
+# Є число. Перевір, чи воно більше 10, за допомогою lambda.
+
+
+
+
+
+#================================================================
+# 1. Перевірка пароля
+# Напишіть функцію check_password(password), яка приймає рядок і перевіряє:
+
+# довжина не менше 8 символів,
+
+# містить хоча б одну цифру,
+
+# містить хоча б одну велику літеру.
+# Функція має повертати True, якщо пароль надійний, і False в іншому випадку.
+
+# char.isdigit(): and char.isupper()
+
+
+
+
+
+
+
+
+
+
 # Ключове слово nonlocal використовується для створення нелокальних змінних. Наприклад:
 # Зовнішня функція 
 def outer():
