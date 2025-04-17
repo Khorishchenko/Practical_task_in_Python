@@ -359,6 +359,9 @@ print(my_tuple)
  
 # Кортеж, що містить цілі числа
 my_tuple = (1, 2, 3)
+tuple_2 = 1., .5, .25, .125
+
+
 print(my_tuple)
  
 # Кортеж зі змішаними типами даних
@@ -371,6 +374,116 @@ print(my_tuple)
 
 
 
+
+my_tuple = (1, 10, 100, 1000)
+ 
+my_tuple.append(10000)
+del my_tuple[0]
+my_tuple[1] = -10
+# AttributeError: 'tuple' object has no attribute 'append'
+
+
+
+my_tuple = (1, 10, 100)
+
+t1 = my_tuple + (1000, 10000)
+t2 = my_tuple * 3
+
+print(len(t2))
+print(t1)
+print(t2)
+print(10 in my_tuple)
+print(-10 not in my_tuple)
+
+
+# Ключові моменти: кортежі
+# 1. Кортежі це впорядковані та незмінні (немінливі) набори даних. Їх можна розглядати як незмінні списки. Вони подаються з круглими дужками:
+my_tuple = (1, 2, True, "a string", (3, 4), [5, 6], None)
+print(my_tuple)
+ 
+my_list = [1, 2, True, "a string", (3, 4), [5, 6], None]
+print(my_list)
+ 
+
+# 2. Пустий кортеж можна створити так:
+empty_tuple = ()
+print(type(empty_tuple)) # виведе: <class 'tuple'>
+ 
+
+
+# 3. Одноелементний кортеж може бути створений наступним чином:
+one_elem_tuple_1 = ("один", )    # Дужки і кома.
+one_elem_tuple_2 = "один",       # Без дужок, лише кома.
+ 
+
+
+# Якщо ви видалите кому, то вкажете Python створити змінну, а не кортеж:
+my_tuple_1 = 1, 
+print(type(my_tuple_1)) # виведе: <class 'tuple'>
+ 
+my_tuple_2 = 1 # Це не кортеж.
+print(type(my_tuple_2)) # виведе: <class 'int'>
+ 
+
+
+# 4. Ви можете отримати доступ до елементів кортежу використовуючи індексацію:
+my_tuple = (1, 2.0, "string", [3, 4], (5, ), True)
+print(my_tuple[3]) # виведе: [3, 4]
+ 
+
+# 5. Кортежі є незмінними, тобто не можна змінювати їх елементи (не можна додавати кортежі, модифікувати або видаляти елементи кортежу). Наступний фрагмент спричинить виняток:
+my_tuple = (1, 2.0, "string", [3, 4], (5, ), True)
+my_tuple[2] = "гітара"    # Буде викликано виняток TypeError.
+ 
+
+# Однак ви можете видалити кортеж цілком:
+my_tuple = 1, 2, 3,
+del my_tuple
+print(my_tuple)    # NameError: name 'my_tuple' is not defined
+ 
+
+
+# 6. Ви можете перебирати елементи кортежу в циклі (Приклад 1), перевіряти наявність (відсутність) певного елемента в кортежі (Приклад 2), 
+# використовувати функцію len() для перевірки кількості елементів в кортежі (Приклад 3), або навіть об'єднувати/перемножувати кортежі (Приклад 4)
+
+# приклад 1
+tuple_1 = (1, 2, 3)
+for elem in tuple_1:
+    print(elem)
+ 
+# приклад 2
+tuple_2 = (1, 2, 3, 4)
+print(5 in tuple_2)
+print(5 not in tuple_2)
+ 
+# приклад 3
+tuple_3 = (1, 2, 3, 4)
+print(len(tuple_3))
+print(5 not in tuple_3)
+# приклад 4
+tuple_4 = tuple_1 + tuple_2
+tuple_5 = tuple_3 * 2
+ 
+print(tuple_4)
+print(tuple_5)
+ 
+
+
+
+#   ДОДАТОК  
+# Створити кортеж можна також за допомогою вбудованої функції Python з назвою tuple().
+# Це особливо корисно, коли потрібно перетворити певний повторюваний об'єкт (наприклад, список, діапазон, рядок і т.д.) в кортеж:
+
+my_tuple = tuple((1, 2, "string"))
+print(my_tuple)
+ 
+my_list = [2, 4, 6]
+print(my_list) # виведе: [2, 4, 6]
+print(type(my_list)) # виведе: <class 'list'>
+tup = tuple(my_list)
+print(tup) # виходи: (2, 4, 6)
+print(type(tup)) # виведе: <class 'tuple'>
+ 
 
 
 
@@ -597,7 +710,8 @@ print('Updated Set:', numbers)
 # Ключ — це унікальний ідентифікатор, який пов’язаний із кожним значенням. 
 # Наприклад, якщо нам потрібно зберегти інформацію про країни та їх столиці, 
 # ми можемо створити словник з назвами країн як ключі та з назвами столиць як значеннями.
-
+#   Примітка  
+# (*) У Python 3.6x словники за замовчуванням стали впорядкованими послідовностями. Ваші результати можуть різнитися залежно від того, якою версією Python ви користуєтесь.
 
 # Створення словника в Python
 capital_city = {"Nepal": "Kathmandu", "Ukraine": "Kyiv", "Italy": "Rome"}
@@ -632,6 +746,92 @@ print("Initial Dictionary: ", student_id)
 del student_id[111]
  
 print("Updated Dictionary ", student_id)
+
+
+
+dictionary = {"cat": "chat", "dog": "chien", "horse": "cheval"}
+words = ['cat', 'lion', 'horse']
+ 
+for word in words:
+    if word in dictionary:
+        print(word, "->", dictionary[word])
+    else:
+        print(word, "немає в словнику")
+
+
+
+# Метод keys()
+dictionary = {"cat": "chat", "dog": "chien", "horse": "cheval"}
+ 
+for key in dictionary.keys():
+    print(key, "->", dictionary[key])
+
+
+
+# Тепер давайте розглянемо словниковий метод з назвою items(). 
+# Метод повертає кортежі (це перший приклад, де кортежі є чимось більшим, ніж просто прикладом самих себе), де кожен кортеж є парою ключ-значення.
+dictionary = {"cat": "chat", "dog": "chien", "horse": "cheval"}
+ 
+for english, french in dictionary.items():
+    print(english, "->", french)
+
+
+
+# Ви хочете це відсортувати? Просто доповніть цикл for, щоб отримати таку конструкцію:
+for key in sorted(dictionary.keys()):
+    pass
+
+
+# Існує також метод з назвою values() , який працює аналогічно як і keys() , але повертає значення.
+dictionarys = {"cat": "chat", "dog": "chien", "horse": "cheval"}
+ 
+for french in dictionarys.values():
+    print(french)
+ 
+
+
+
+# Примітка: видалення ключа завжди призводить до видалення пов'язаного з ним значення. Значення не можуть існувати без своїх ключів.
+del dictionary['dog']
+print(dictionary)
+
+
+
+
+
+# 4.6.5 Взаємодія кортежів та словників
+
+# Уявімо собі наступну проблему:
+
+# потрібна програма для визначення середньої оцінки студентів;
+# програма повинна запитувати ім'я студента, а потім його/її особисту оцінку;
+# імена можна вводити в будь-якому порядку;
+# введення пустого імені завершує введення даних (примітка 1: введення пустого балу викличе помилку 
+#                                                 ValueError, але про це зараз не варто хвилюватись, як обробляти такі випадки ми розглянемо, коли будемо говорити про винятки у другій частині циклу курсу Основи Python)
+# після цього має бути виданий список усіх імен разом з визначеним середнім балом.
+school_class = {}
+
+while True:
+    name = input("Введіть ім'я студента: ")
+    if name == '':
+        break
+    
+    score = int(input("Введіть оцінку студента (0-10): "))
+    if score not in range(0, 11):
+            break
+    
+    if name in school_class:
+        school_class[name] += (score,)
+    else:
+        school_class[name] = (score,)
+        
+for name in sorted(school_class.keys()):
+    adding = 0
+    counter = 0
+    for score in school_class[name]:
+        adding += score
+        counter += 1
+    print(name, ":", adding / counter)
 
 
 #  end --> https://acode.com.ua/dictionary-python/
